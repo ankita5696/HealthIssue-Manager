@@ -12,6 +12,7 @@ import { FindPatientComponent } from './find-patient/find-patient.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HealthIssueComponent } from './health-issue/health-issue.component';
 const routes: Routes = [
 ];
 
@@ -21,7 +22,8 @@ const routes: Routes = [
     TestcomponentComponent,
     NavBarComponent,
     SidebarComponent,
-    routingComponent
+    routingComponent,
+    HealthIssueComponent
   ],
   imports: [
     BrowserModule,
