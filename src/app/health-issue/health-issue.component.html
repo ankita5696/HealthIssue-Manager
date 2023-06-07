@@ -1,1 +1,77 @@
-<p>health-issue works!</p>
+<!-- <kendo-treelist
+    [kendoTreeListFlatBinding]= "healthissueobj"
+    kendoTreeListExpandable
+    idField="id"
+    parentIdField="id"
+>
+    <kendo-treelist-column [expandable]="true" field="name" title="Name"> </kendo-treelist-column>
+    <kendo-treelist-column field="id" title="id"></kendo-treelist-column>
+    <kendo-treelist-column field="enteredDate" title="Date"></kendo-treelist-column>
+</kendo-treelist> -->
+
+<div id="treelist" style="border: 1px solid black;">
+    {{healthissueobj | json}}
+    <table class="table table-bordered table-striped" style="background-color:white">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Health Issue</th>
+          <th>Code</th>
+          <th>HCC</th>
+          <th>Entered Date</th>
+          <th>Status</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><span>{{healthissueobj.id}}</span></td>
+          <td><span>{{healthissueobj.healthissue}}</span></td>
+          <td><span>{{healthissueobj.code}}</span></td>
+          <td><span>{{healthissueobj.hcc}}</span></td>
+          <td><span>{{healthissueobj.enteredDate}}</span></td>
+          <td><span>{{healthissueobj.status}}</span></td>
+          <td width="22%">
+            <button class="btn btn-sm btn-info">
+              <i class="fa fa-search"></i>Details</button>
+            <button  class="btn btn-sm btn-warning">
+              <i class="fa fa-edit"></i>Edit</button>
+            <button
+            class="btn btn-sm btn-danger">
+              <i class="fa fa-remove"></i>Delete</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+</div>
+<!-- <script>
+    // Target the div element by using jQuery and then call the kendoTreeList() method.
+ 
+    $("#treelist").kendoTreeList({
+        dataSource: {
+          data: healthissueobj,
+          schema: {
+            model: {
+              id: "ID",
+              parentId: "ID",
+              expanded: true,
+              fields: {
+                Date: { type: "enteredDate" }
+              }
+            }
+          }
+        }
+      });
+      $("#treelist").kendoTreeList({
+        // Add some basic configurations such as height.
+        height: 400
+    });
+      $("#treelist").kendoTreeList({
+        columns: [
+          { field: "ID" },
+          { field: "Name" },
+          { field: "Date"}
+        ]
+      });
+</script> -->
+<button kendo-button> kendo button</button>

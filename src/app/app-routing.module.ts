@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FindPatientComponent } from './find-patient/find-patient.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TestcomponentComponent } from './testcomponent/testcomponent.component';
+import { HealthIssueComponent } from './health-issue/health-issue.component';
 
 const routes: Routes = [
   { path: '', component: AppComponent },
   { path: 'FindPatient', component: FindPatientComponent },
   { path: 'AddPatient', component: AddPatientComponent },
   { path: 'Employee', component: TestcomponentComponent },
-  { path: 'Home', component: SidebarComponent }
+  { path: 'Home', component: SidebarComponent },
+  { path: 'HealthIssues', component: HealthIssueComponent }
 ];
 
 @NgModule({
@@ -19,4 +21,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponent=[AppComponent,FindPatientComponent,AddPatientComponent]
+export const routingComponent=[AppComponent,FindPatientComponent,AddPatientComponent,HealthIssueComponent]
