@@ -41,6 +41,19 @@
       <a class="nav-link disabled" href="#">Disabled</a>
     </li>
   </ul>
+  <div>
+    <ul class="navbar-nav">
+      <li *ngIf="!loggedin()" class="nav-item">
+        <a class="nav-link" routerLink="/Register">Register</a>
+      </li>
+      <li *ngIf="!loggedin()" class="nav-item">
+        <a class="nav-link" routerLink="/Login">Login</a>
+      </li>
+      <li *ngIf="loggedin()" class="nav-item">
+        <a class="nav-link" (click)="onLogout()" routerLink="/Login">Logout</a>
+      </li>
+    </ul>
+  </div>
 </nav>
 
 
