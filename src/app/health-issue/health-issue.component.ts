@@ -14,4 +14,19 @@ export class HealthIssueComponent {
     new HealthIssue(3,'Appendix','K38.0','Yes','01-03-2023','Resolved')
   ];
 
+ngOnInit():void{
+  const localdata= localStorage.getItem('HIlist');
+  if(localdata!=null){
+    this.healthissueobj= JSON.parse(localdata);
+  }
+}
+
+ // healthissueobj : HealthIssue[]=[];
+  HIobj = new HealthIssue(1,'Acute Pain','R52.0','Yes','01-03-2023','Active');
+
+  saveHI(data:any){
+    this.healthissueobj.push(this.HIobj);
+    localStorage.setItem('HIlist',JSON.stringify(this.healthissueobj));
+    this.HIobj = {} as HealthIssue;
+  }
 }
