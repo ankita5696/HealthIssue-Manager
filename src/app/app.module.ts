@@ -11,9 +11,20 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FindPatientComponent } from './find-patient/find-patient.component';
 import { AddPatientComponent } from './add-patient/add-patient.component';
 import { Routes } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HealthIssueComponent } from './health-issue/health-issue.component';
+import { AuthService } from './services/auth.service';
+import { UserLoginComponent } from './user/user-login/user-login.component';
+import { UserRegisterComponent } from './user/user-register/user-register.component';
 const routes: Routes = [
+  { path: '', component: UserLoginComponent },
+  { path: 'AddPatient', component: AddPatientComponent },
+  { path: 'Login', component: UserLoginComponent },
+  { path: 'Home', component: UserLoginComponent},
+  { path: 'FindPatient', component: FindPatientComponent },
+  { path: 'Login', component: UserLoginComponent },
+  { path: 'Register', component: UserRegisterComponent },
+  { path: '**', component: UserLoginComponent }
 ];
 
 @NgModule({
@@ -23,15 +34,22 @@ const routes: Routes = [
     NavBarComponent,
     SidebarComponent,
     routingComponent,
-    HealthIssueComponent
+    HealthIssueComponent,
+    UserLoginComponent,
+    UserRegisterComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [TestService],
+  providers: [
+    TestService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
