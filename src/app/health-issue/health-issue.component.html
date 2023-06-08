@@ -23,13 +23,13 @@
         </tr>
         </thead>
         <tbody>
-        <tr>
-          <td><span>{{healthissueobj.id}}</span></td>
-          <td><span>{{healthissueobj.healthissue}}</span></td>
-          <td><span>{{healthissueobj.code}}</span></td>
-          <td><span>{{healthissueobj.hcc}}</span></td>
-          <td><span>{{healthissueobj.enteredDate}}</span></td>
-          <td><span>{{healthissueobj.status}}</span></td>
+          <tr *ngFor="let hiobj of healthissueobj">
+            <td><span>{{hiobj.id}}</span></td>
+            <td><span>{{hiobj.healthissue}}</span></td>
+            <td><span>{{hiobj.code}}</span></td>
+            <td><span>{{hiobj.hcc}}</span></td>
+            <td><span>{{hiobj.enteredDate}}</span></td>
+            <td><span>{{hiobj.status}}</span></td>
           <td width="22%">
             <button class="btn btn-sm btn-info">
               <i class="fa fa-search"></i>Details</button>
