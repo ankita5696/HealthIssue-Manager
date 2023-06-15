@@ -36,17 +36,7 @@ export class HealthIssueComponent implements OnInit{
         isView
         },
       };
-
     this.router.navigate(['../HealthIssueDetails'],navigationExtras);
-    /*
-    let healthIssue = { properties };
-    let navigationExtras: NavigationExtras = {
-    state: {
-        healthIssue: healthIssue,
-      },
-    };
-    this.router.navigate(['../HealthIssueDetails'], navigationExtras);
-    */
   }
 
   healthissueobj= [
