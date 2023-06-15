@@ -8,6 +8,7 @@ import { TestcomponentComponent } from './testcomponent/testcomponent.component'
 import { HealthIssueComponent } from './health-issue/health-issue.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { HealthissueDetailsComponent } from './healthissue/healthissue-details/healthissue-details.component';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'Home', component: SidebarComponent },
   { path: 'HealthIssues', component: HealthIssueComponent },
   { path: 'Login', component: UserLoginComponent },
-  { path: 'Register', component: UserRegisterComponent }
+  { path: 'Register', component: UserRegisterComponent },
+  { path: 'HealthIssueDetails', component: HealthissueDetailsComponent }
 ];
 
 @NgModule({

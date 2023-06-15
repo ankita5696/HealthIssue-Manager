@@ -16,6 +16,7 @@ import { HealthIssueComponent } from './health-issue/health-issue.component';
 import { AuthService } from './services/auth.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
+import { HealthissueDetailsComponent } from './healthissue/healthissue-details/healthissue-details.component';
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
   { path: 'AddPatient', component: AddPatientComponent },
@@ -36,7 +37,8 @@ const routes: Routes = [
     routingComponent,
     HealthIssueComponent,
     UserLoginComponent,
-    UserRegisterComponent
+    UserRegisterComponent,
+    HealthissueDetailsComponent
   ],
 
   imports: [

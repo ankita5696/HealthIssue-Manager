@@ -9,7 +9,7 @@
     <kendo-treelist-column field="enteredDate" title="Date"></kendo-treelist-column>
 </kendo-treelist> -->
 
-<div id="treelist" style="border: 1px solid black;">
+<div id="treelist" style="border: 1px solid black;" [formGroup]="healthIssueForm">
     {{healthissueobj | json}}
     <table class="table table-bordered table-striped" style="background-color:white">
         <thead>
@@ -23,7 +23,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let hiobj of healthissueobj">
+          <tr *ngFor="let hiobj of healthissueobj; let id = index" [class.active]="id == highlightRow">
             <td><span>{{hiobj.id}}</span></td>
             <td><span>{{hiobj.healthissue}}</span></td>
             <td><span>{{hiobj.code}}</span></td>
@@ -31,12 +31,11 @@
             <td><span>{{hiobj.enteredDate}}</span></td>
             <td><span>{{hiobj.status}}</span></td>
           <td width="22%">
-            <button class="btn btn-sm btn-info">
-              <i class="fa fa-search"></i>Details</button>
-            <button  class="btn btn-sm btn-warning">
-              <i class="fa fa-edit"></i>Edit</button>
-            <button
-            class="btn btn-sm btn-danger">
+            <button class="btn btn-sm btn-info" (click)="ClickedRow(id,true)">
+              <i class="fa fa-search"></i>Details</button>&nbsp;
+            <button  class="btn btn-sm btn-warning" (click)="ClickedRow(id,false)">
+              <i class="fa fa-edit"></i>Edit</button>&nbsp;
+            <button class="btn btn-sm btn-danger" >
               <i class="fa fa-remove"></i>Delete</button>
           </td>
         </tr>
@@ -46,7 +45,7 @@
 </div>
 <!-- <script>
     // Target the div element by using jQuery and then call the kendoTreeList() method.
- 
+
     $("#treelist").kendoTreeList({
         dataSource: {
           data: healthissueobj,
@@ -74,4 +73,3 @@
         ]
       });
 </script> -->
-<button kendo-button> kendo button</button>
