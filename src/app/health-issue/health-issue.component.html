@@ -1,17 +1,8 @@
-<!-- <kendo-treelist
-    [kendoTreeListFlatBinding]= "healthissueobj"
-    kendoTreeListExpandable
-    idField="id"
-    parentIdField="id"
->
-    <kendo-treelist-column [expandable]="true" field="name" title="Name"> </kendo-treelist-column>
-    <kendo-treelist-column field="id" title="id"></kendo-treelist-column>
-    <kendo-treelist-column field="enteredDate" title="Date"></kendo-treelist-column>
-</kendo-treelist> -->
+
 
 <div id="treelist" style="border: 1px solid black;" [formGroup]="healthIssueForm">
     {{healthissueobj | json}}
-    <table class="table table-bordered table-striped" style="background-color:white">
+    <table class="table table-bordered table-striped mt-3" style="background-color:white">
         <thead>
         <tr>
           <th>ID</th>
@@ -43,33 +34,52 @@
       </table>
 
 </div>
-<!-- <script>
-    // Target the div element by using jQuery and then call the kendoTreeList() method.
+<br>
+<button type="button" class="btn btn-success"  data-toggle="modal" data-target="#myModal"> Add HealthIssue </button>
 
-    $("#treelist").kendoTreeList({
-        dataSource: {
-          data: healthissueobj,
-          schema: {
-            model: {
-              id: "ID",
-              parentId: "ID",
-              expanded: true,
-              fields: {
-                Date: { type: "enteredDate" }
-              }
-            }
-          }
-        }
-      });
-      $("#treelist").kendoTreeList({
-        // Add some basic configurations such as height.
-        height: 400
-    });
-      $("#treelist").kendoTreeList({
-        columns: [
-          { field: "ID" },
-          { field: "Name" },
-          { field: "Date"}
-        ]
-      });
-</script> -->
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Add Health Issue</h4>
+      </div>
+      <div class="modal-body">
+        <form #HIForm="ngForm" novalidate>
+          <div class="form-group form-width">
+              <label>ID</label>
+              <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id">
+          </div>
+          <div class="form-group form-width">
+            <label>Health Issue</label>
+            <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue">
+        </div>
+        <div class="form-group form-width">
+          <label>Code</label>
+          <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code">
+      </div>
+      <div class="form-group form-width">
+        <label>HCC</label>
+        <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc">
+       </div>
+       <div class="form-group form-width">
+        <label>EnteredDate</label>
+        <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate">
+       </div>
+       <div class="form-group form-width">
+        <label>Status</label>
+        <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status">
+       </div>
+    </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-dismiss="modal" (click)="saveHI(HIForm)">Save</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
