@@ -1,6 +1,6 @@
 
 
-<div id="treelist" style="border: 1px solid black;">
+<div id="treelist" style="border: 1px solid black;" [formGroup]="healthIssueForm">
     {{healthissueobj | json}}
     <table class="table table-bordered table-striped mt-3" style="background-color:white">
         <thead>
@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let hiobj of healthissueobj">
+          <tr *ngFor="let hiobj of healthissueobj; let id = index" [class.active]="id == highlightRow">
             <td><span>{{hiobj.id}}</span></td>
             <td><span>{{hiobj.healthissue}}</span></td>
             <td><span>{{hiobj.code}}</span></td>
@@ -22,12 +22,11 @@
             <td><span>{{hiobj.enteredDate}}</span></td>
             <td><span>{{hiobj.status}}</span></td>
           <td width="22%">
-            <button class="btn btn-sm btn-info mx-3">
-              <i class="fa fa-search"></i>Details</button>
-            <button  class="btn btn-sm btn-warning mx-3">
-              <i class="fa fa-edit"></i>Edit</button>
-            <button
-            class="btn btn-sm btn-danger mx-3">
+            <button class="btn btn-sm btn-info" (click)="ClickedRow(id,true)">
+              <i class="fa fa-search"></i>Details</button>&nbsp;
+            <button  class="btn btn-sm btn-warning" (click)="ClickedRow(id,false)">
+              <i class="fa fa-edit"></i>Edit</button>&nbsp;
+            <button class="btn btn-sm btn-danger" >
               <i class="fa fa-remove"></i>Delete</button>
           </td>
         </tr>
@@ -52,27 +51,27 @@
         <form #HIForm="ngForm" novalidate>
           <div class="form-group form-width">
               <label>ID</label>
-              <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id">              
+              <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id">
           </div>
           <div class="form-group form-width">
             <label>Health Issue</label>
-            <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue">              
+            <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue">
         </div>
         <div class="form-group form-width">
           <label>Code</label>
-          <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code">             
+          <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code">
       </div>
       <div class="form-group form-width">
         <label>HCC</label>
-        <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc">              
+        <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc">
        </div>
        <div class="form-group form-width">
         <label>EnteredDate</label>
-        <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate">              
+        <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate">
        </div>
        <div class="form-group form-width">
         <label>Status</label>
-        <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status">           
+        <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status">
        </div>
     </form>
       </div>
