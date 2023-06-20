@@ -23,8 +23,6 @@ export class HealthIssueComponent implements OnInit{
       this.onHIDetails(this.highlightRow, this.isView);
   }
   }
-  ngOnInit(): void {
-  }
 
   onHIDetails(healthissueID: number, isView: boolean) {
     let healthIssue:HealthIssue ;
