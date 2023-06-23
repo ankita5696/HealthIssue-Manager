@@ -52,10 +52,14 @@ ngOnInit():void{
 
  // healthissueobj : HealthIssue[]=[];
   HIobj = new HealthIssue(1,'Acute Pain','R52.0','Yes','01-03-2023','Active');
-
+  display1 = false;
   saveHI(data:any){
     this.healthissueobj.push(this.HIobj);
     localStorage.setItem('HIlist',JSON.stringify(this.healthissueobj));
     this.HIobj = {} as HealthIssue;
+  }
+  onAdd(){
+    this.display1 = false;
+    this.router.navigate(['../HealthIssueAdd']);
   }
 }

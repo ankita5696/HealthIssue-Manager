@@ -37,7 +37,7 @@
         </div>
         <br>
         <div class="form-group col-12">
-          <button [disabled]="isView" type="submit" class="btn btn-primary">Save</button>&nbsp;
+          <button [hidden]="isView" type="submit" class="btn btn-primary" (click)="saveHI(hiDetailsForm)">Save</button>&nbsp;
           <button [disabled]="isView" type="reset" class="btn btn-secondary ml-2">Cancel</button>
         </div>
       </form>

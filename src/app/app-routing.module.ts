@@ -9,6 +9,7 @@ import { HealthIssueComponent } from './health-issue/health-issue.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { HealthissueDetailsComponent } from './healthissue/healthissue-details/healthissue-details.component';
+import { HealthissueAddComponent } from './healthissue/healthissue-add/healthissue-add.component';
 
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'HealthIssues', component: HealthIssueComponent },
   { path: 'Login', component: UserLoginComponent },
   { path: 'Register', component: UserRegisterComponent },
-  { path: 'HealthIssueDetails', component: HealthissueDetailsComponent }
+  { path: 'HealthIssueDetails', component: HealthissueDetailsComponent },
+  { path: 'HealthIssueAdd', component: HealthissueAddComponent }
 ];
 
 @NgModule({

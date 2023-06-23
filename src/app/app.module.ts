@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { UserRegisterComponent } from './user/user-register/user-register.component';
 import { HealthissueDetailsComponent } from './healthissue/healthissue-details/healthissue-details.component';
+import { HealthissueAddComponent } from './healthissue/healthissue-add/healthissue-add.component';
 const routes: Routes = [
   { path: '', component: UserLoginComponent },
   { path: 'AddPatient', component: AddPatientComponent },
@@ -38,7 +39,8 @@ const routes: Routes = [
     HealthIssueComponent,
     UserLoginComponent,
     UserRegisterComponent,
-    HealthissueDetailsComponent
+    HealthissueDetailsComponent,
+    HealthissueAddComponent
   ],
 
   imports: [
