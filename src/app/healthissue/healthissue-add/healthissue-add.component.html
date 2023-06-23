@@ -1,0 +1,45 @@
+<!-- <p>healthissue-add works!</p> -->
+<div class="row" id="#myModal">
+    <div class="col-6 m-auto">
+    <div class="card m-auto">
+      <div class="card-header">
+       Add Health Issue 
+      </div>
+      <div class="card-body">
+        <form #HIForm="ngForm" novalidate>
+            <div class="form-group form-width">
+                <label>ID</label>
+                <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id">
+            </div>
+            <div class="form-group form-width">
+              <label>Health Issue</label>
+              <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue">
+          </div>
+          <div class="form-group form-width">
+            <label>Code</label>
+            <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code">
+        </div>
+        <div class="form-group form-width">
+          <label>HCC</label>
+          <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc">
+         </div>
+         <div class="form-group form-width">
+          <label>EnteredDate</label>
+          <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate">
+         </div>
+         <div class="form-group form-width">
+          <label>Status</label>
+          <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status">
+         </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-success" (click)="saveHI(HIForm)">Save</button>
+        <button type="button" class="btn btn-default" (click)="onClose()">Close</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+  
+  
