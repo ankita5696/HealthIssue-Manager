@@ -12,12 +12,18 @@ import { FormGroup } from '@angular/forms';
 })
 export class HealthissueAddComponent {
 // healthissueobj : HealthIssue[]=[];
-HIobj = new HealthIssue(1,'Acute Pain','R52.0','Yes','01-03-2023','Active');
+HIobj ={} as HealthIssue;
   healthissueobj: any;
   constructor(private router: Router){}
   
  // HIobj = {} as HealthIssue;
-
+ ngOnInit():void{
+  const localdata= localStorage.getItem('HIlist');
+  if(localdata!=null){
+    this.healthissueobj= JSON.parse(localdata);
+  }
+  
+}
 onClose(): void{
   this.router.navigate(['../HealthIssues']);
 }
