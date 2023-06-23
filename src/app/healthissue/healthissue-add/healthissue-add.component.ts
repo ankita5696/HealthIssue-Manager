@@ -29,9 +29,15 @@ onClose(): void{
 }
 
 saveHI(data:any){
+  if(this.HIobj.code == null || this.HIobj.enteredDate == null || this.HIobj.hcc == null||this.HIobj.healthissue == null || this.HIobj.id == null ){
+   //this.messageBox.show("Error","Please enter details")
+   alert("Please enter all details");
+  }
+  else{
   this.healthissueobj.push(this.HIobj);
   localStorage.setItem('HIlist',JSON.stringify(this.healthissueobj));
   this.HIobj = {} as HealthIssue;
   this.router.navigate(['../HealthIssues']);
+  }
 }
 }
