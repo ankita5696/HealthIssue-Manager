@@ -48,10 +48,14 @@ ngOnInit():void{
   if(localdata!=null){
     this.healthissueobj= JSON.parse(localdata);
   }
+  else{
+    localStorage.setItem('HIlist',JSON.stringify(this.healthissueobj));
+  }
 }
 
+
  // healthissueobj : HealthIssue[]=[];
-  HIobj = new HealthIssue(1,'Acute Pain','R52.0','Yes','01-03-2023','Active');
+ public HIobj = new HealthIssue(1,'Acute Pain','R52.0','Yes','01-03-2023','Active');
   display1 = false;
   saveHI(data:any){
     this.healthissueobj.push(this.HIobj);
