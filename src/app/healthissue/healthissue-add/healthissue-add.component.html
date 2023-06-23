@@ -9,27 +9,27 @@
         <form #HIForm="ngForm" novalidate>
             <div class="form-group form-width">
                 <label>ID</label>
-                <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id">
+                <input type="text" required  #name="ngModel" class="form-control" name="ID" [(ngModel)]="HIobj.id" placeholder="ID">
             </div>
             <div class="form-group form-width">
               <label>Health Issue</label>
-              <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue">
+              <input type="text" required  #name="ngModel" class="form-control" name="healthissue" [(ngModel)]="HIobj.healthissue" placeholder="Add health issue">
           </div>
           <div class="form-group form-width">
             <label>Code</label>
-            <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code">
+            <input type="text" required  #name="ngModel" class="form-control" name="code" [(ngModel)]="HIobj.code" placeholder="Add HI code">
         </div>
         <div class="form-group form-width">
           <label>HCC</label>
-          <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc">
+          <input type="text" required  #name="ngModel" class="form-control" name="hcc" [(ngModel)]="HIobj.hcc" placeholder="Add hcc">
          </div>
          <div class="form-group form-width">
           <label>EnteredDate</label>
-          <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate">
+          <input type="text" required  #name="ngModel" class="form-control" name="enteredDate" [(ngModel)]="HIobj.enteredDate" placeholder="Add entered date">
          </div>
          <div class="form-group form-width">
           <label>Status</label>
-          <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status">
+          <input type="text" required  #name="ngModel" class="form-control" name="status" [(ngModel)]="HIobj.status" placeholder="Add status">
          </div>
       </form>
       </div>
